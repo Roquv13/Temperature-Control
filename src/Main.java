@@ -6,6 +6,6 @@ public class Main {
 
         userInterface.userSelection();
 
-        userInterface.tempControl();
+        userInterface.tempControlSelection();
     }
 }
