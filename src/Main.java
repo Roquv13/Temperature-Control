@@ -7,5 +7,7 @@ public class Main {
         userInterface.userSelection();
 
         userInterface.tempControlSelection();
+
+        userInterface.heatUpPlans();
     }
 }

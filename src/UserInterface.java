@@ -17,4 +17,13 @@ public class UserInterface {
         System.out.println("3. Back");
         System.out.println();
     }
+
+    public void heatUpPlans() {
+        System.out.println("Heat up plans:");
+        System.out.println("1. Whole week");
+        System.out.println("2. Working days + weekend");
+        System.out.println("3. Working days + sunday");
+        System.out.println("4. Back");
+        System.out.println();
+    }
 }
