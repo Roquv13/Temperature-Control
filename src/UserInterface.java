@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class UserInterface {
     boolean isLocked = false;
+    double temperature = 22;
+    char celsius = '\u2103';
+    char fahrenheit = '\u2109';
     public void displayUserSelection() {
         Scanner scanner = new Scanner(System.in);
         boolean select = true;
@@ -19,8 +22,10 @@ public class UserInterface {
             int userSelection = scanner.nextInt();
 
             switch (userSelection) {
-                case 1 -> System.out.println("case1");
-                case 2 -> System.out.println("case2");
+                case 1 -> System.out.println("Actual temperature: " + temperature + celsius);
+                case 2 -> {
+                    System.out.println("case2");
+                }
                 case 3 -> {
                     if (isLocked == false) isLocked = true;
                     else if (isLocked == true) isLocked = false;
@@ -32,6 +37,13 @@ public class UserInterface {
         } while (select);
     }
 
+    public void displayLockInterface() {
+        if (isLocked == false) {
+            System.out.println("3. Lock interface");
+        } else if (isLocked == true) {
+            System.out.println("3. Unlock interface");
+        }
+    }
     public void displayTempControlSelection() {
         System.out.println("Type of temperature control:");
         System.out.println("1. Automatic");
@@ -49,11 +61,4 @@ public class UserInterface {
         System.out.println();
     }
 
-    public void displayLockInterface() {
-        if (isLocked == false) {
-            System.out.println("3. Lock interface");
-        } else if (isLocked == true) {
-            System.out.println("3. Unlock interface");
-        }
-    }
 }
