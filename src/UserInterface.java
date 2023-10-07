@@ -8,7 +8,11 @@ public class UserInterface {
     char celsius = '\u2103';
     char fahrenheit = '\u2109';
     public void displayUserSelection() {
+        Settings settings = new Settings();
+
         boolean select = true;
+
+        settings.tempChangeUnit();
 
         do {
             System.out.println("1. Display actual temperature");
@@ -23,7 +27,7 @@ public class UserInterface {
             int userSelection = scanner.nextInt();
 
             switch (userSelection) {
-                case 1 -> System.out.println("Actual temperature: " + temperature + celsius);
+                case 1 -> System.out.println("Actual temperature: " + temperature + settings.getTempUnit());
                 case 2 -> displayTempControlSelection();
                 case 3 -> {
                     if (isLocked == false) isLocked = true;
@@ -66,7 +70,7 @@ public class UserInterface {
 
     public void displayHeatUpPlans() {
         boolean select = true;
-        
+
         System.out.println("Heat up plans:");
         System.out.println("1. Whole week");
         System.out.println("2. Working days + weekend");
