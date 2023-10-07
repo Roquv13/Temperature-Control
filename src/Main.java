@@ -4,10 +4,10 @@ public class Main {
     public static void main(String[] args) {
         UserInterface userInterface = new UserInterface();
 
-        userInterface.userSelection();
+        userInterface.displayUserSelection();
 
-        userInterface.tempControlSelection();
+        userInterface.displayTempControlSelection();
 
-        userInterface.heatUpPlans();
+        userInterface.displayHeatUpPlans();
     }
 }

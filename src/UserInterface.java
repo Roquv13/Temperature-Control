@@ -1,5 +1,5 @@
 public class UserInterface {
-    public void userSelection() {
+    public void displayUserSelection() {
         System.out.println("Select");
         System.out.println("1. Display actual temperature");
         System.out.println("2. Temperature control");
@@ -10,7 +10,7 @@ public class UserInterface {
         System.out.println();
     }
 
-    public void tempControlSelection() {
+    public void displayTempControlSelection() {
         System.out.println("Type of temperature control:");
         System.out.println("1. Automatic");
         System.out.println("2. Manual");
@@ -18,7 +18,7 @@ public class UserInterface {
         System.out.println();
     }
 
-    public void heatUpPlans() {
+    public void displayHeatUpPlans() {
         System.out.println("Heat up plans:");
         System.out.println("1. Whole week");
         System.out.println("2. Working days + weekend");
