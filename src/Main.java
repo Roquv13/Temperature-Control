@@ -6,8 +6,8 @@ public class Main {
 
         userInterface.displayUserSelection();
 
-        userInterface.displayTempControlSelection();
+        //userInterface.displayTempControlSelection();
 
-        userInterface.displayHeatUpPlans();
+        //userInterface.displayHeatUpPlans();
     }
 }
