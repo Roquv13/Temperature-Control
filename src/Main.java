@@ -5,5 +5,7 @@ public class Main {
         UserInterface userInterface = new UserInterface();
 
         userInterface.userSelection();
+
+        userInterface.tempControl();
     }
 }

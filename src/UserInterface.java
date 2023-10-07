@@ -7,4 +7,9 @@ public class UserInterface {
         System.out.println("6. Settings");
         System.out.println("7. Exit");
     }
+
+    public void tempControl() {
+        System.out.println("1. Automatic");
+        System.out.println("2. Manual");
+    }
 }
