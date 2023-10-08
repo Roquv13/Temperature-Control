@@ -40,16 +40,16 @@ public class UserInterface {
     public void displayTempControlSelection() {
         boolean select = true;
 
-        System.out.println("Type of temperature control:");
-        System.out.println("1. Automatic");
-        System.out.println("2. Manual");
-        System.out.println("3. Back");
-        System.out.println();
-
-        System.out.println("Select:");
-        int userSelection = scanner.nextInt();
-
         do {
+            System.out.println("Type of temperature control:");
+            System.out.println("1. Automatic");
+            System.out.println("2. Manual");
+            System.out.println("3. Back");
+            System.out.println();
+
+            System.out.println("Select:");
+            int userSelection = scanner.nextInt();
+
             switch (userSelection) {
                 case 1 -> System.out.println("Automatic");
                 case 2 -> System.out.println("Manual");
