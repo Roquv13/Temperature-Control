@@ -19,6 +19,6 @@ public class Settings {
     }
 
     public char getTempUnit() {
-        return tempUnit;
+        return this.tempUnit;
     }
 }
