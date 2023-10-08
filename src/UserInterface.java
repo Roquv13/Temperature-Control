@@ -12,8 +12,6 @@ public class UserInterface {
 
         boolean select = true;
 
-        settings.tempChangeUnit();
-
         do {
             System.out.println("1. Display actual temperature");
             System.out.println("2. Temperature control");
@@ -34,7 +32,7 @@ public class UserInterface {
                     else if (isLocked == true) isLocked = false;
                 }
                 case 4 -> displayHeatUpPlans();
-                case 5 -> System.out.println("case5");
+                case 5 -> settings.tempChangeUnit();
                 case 6 -> select = false;
             }
         } while (select);

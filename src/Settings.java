@@ -3,9 +3,8 @@ import java.util.Scanner;
 public class Settings {
     Scanner scanner = new Scanner(System.in);
 
-    public char tempUnit;
+    public char tempUnit = '\u2103';
     public void tempChangeUnit() {
-
         System.out.println("Set up temperature unit:");
         System.out.println("1. Celsius");
         System.out.println("2. Fahrenheit");
