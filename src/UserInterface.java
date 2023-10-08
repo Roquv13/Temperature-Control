@@ -9,9 +9,10 @@ public class UserInterface {
 
     char fahrenheit = '\u2109';
 
+    TemperatureManual temperatureManual = new TemperatureManual(22);
+
     public void displayUserSelection() {
         Settings settings = new Settings();
-        TemperatureManual temperatureManual = new TemperatureManual();
 
         boolean select = true;
 
@@ -28,7 +29,7 @@ public class UserInterface {
             int userSelection = scanner.nextInt();
 
             switch (userSelection) {
-                case 1 -> System.out.println("Actual temperature: " + temperatureManual.getTemp() + settings.getTempUnit());
+                case 1 -> System.out.println("Actual temperature: " + temperatureManual.getTemperature() + settings.getTempUnit());
                 case 2 -> displayTempControlSelection();
                 case 3 -> {
                     if (isLocked == false) isLocked = true;
@@ -42,7 +43,6 @@ public class UserInterface {
     }
     public void displayTempControlSelection() {
         boolean select = true;
-        TemperatureManual temperatureManual = new TemperatureManual();
 
         do {
             System.out.println("Type of temperature control:");
@@ -59,7 +59,7 @@ public class UserInterface {
                 case 2 -> {
                     System.out.println("Set up temperature:");
                     double value = scanner.nextDouble();
-                    temperatureManual.setTemp(value);
+                    temperatureManual.setTemperature(value);
                     select = false;
                 }
                 case 3 -> select = false;

@@ -1,13 +1,15 @@
-import java.util.Scanner;
-
 public class TemperatureManual {
-    public double temperature;
+    private double temperature;
+    public TemperatureManual(double initialTemperature) {
+        this.temperature = initialTemperature;
+    }
 
-    public double getTemp() {
+    public double getTemperature() {
         return this.temperature;
     }
 
-    public void setTemp(double value) {
-        this.temperature  = value;
+    public void setTemperature(double value) {
+        this.temperature = value;
     }
 }
+
