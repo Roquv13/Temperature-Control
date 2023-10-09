@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class User_Interface {
     Scanner scanner = new Scanner(System.in);
     Temperature_Manual temperatureManual = new Temperature_Manual();
+    HeatUp_Plans heatUpPlans = new HeatUp_Plans();
 
     public void displayUserSelection() {
         Settings settings = new Settings();
@@ -17,10 +18,9 @@ public class User_Interface {
             System.out.println("4. Heat up plans");
             System.out.println("5. Settings");
             System.out.println("6. Exit");
-            System.out.println();
-
             System.out.println("Select:");
             int userSelection = scanner.nextInt();
+            System.out.println();
 
             switch (userSelection) {
                 case 1 -> {
@@ -28,7 +28,7 @@ public class User_Interface {
                 }
                 case 2 -> displayTempControlSelection();
                 case 3 -> lockInterface.isLocked();
-                case 4 -> displayHeatUpPlans();
+                case 4 -> heatUpPlans.displayHeatUpPlans();
                 case 5 -> {
                     settings.tempChangeUnit();
                     if (settings.getTempUnit() == '\u2109') {
@@ -68,30 +68,4 @@ public class User_Interface {
             }
         } while (select);
     }
-
-
-
-    public void displayHeatUpPlans() {
-        boolean select = true;
-
-        System.out.println("Heat up plans:");
-        System.out.println("1. Whole week");
-        System.out.println("2. Working days + weekend");
-        System.out.println("3. Working days + sunday");
-        System.out.println("4. Back");
-        System.out.println();
-
-        System.out.println("Select:");
-        int userSelection = scanner.nextInt();
-
-        do {
-            switch (userSelection) {
-                case 1 -> System.out.println("Whole week");
-                case 2 -> System.out.println("Working days + weekend");
-                case 3 -> System.out.println("Working days + sunday");
-                case 4 -> select = false;
-            }
-        } while (select);
-    }
-
 }
