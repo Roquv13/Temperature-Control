@@ -6,14 +6,14 @@ public class User_Interface {
 
     public void displayUserSelection() {
         Settings settings = new Settings();
-        Lock_Interaface lockInteraface = new Lock_Interaface();
+        Lock_Interface lockInterface = new Lock_Interface();
 
         boolean select = true;
 
         do {
             System.out.println("1. Display actual temperature");
             System.out.println("2. Temperature control");
-            lockInteraface.displayLockInterface(); //Lock or unlock
+            lockInterface.displayLockInterface(); //Lock or unlock
             System.out.println("4. Heat up plans");
             System.out.println("5. Settings");
             System.out.println("6. Exit");
@@ -26,7 +26,7 @@ public class User_Interface {
                 case 1 -> System.out.println("Actual temperature: " + temperatureManual.getTemperature() + settings.getTempUnit());
                 case 2 -> displayTempControlSelection();
                 case 3 -> {
-                    lockInteraface.isLocked();
+                    lockInterface.isLocked();
                 }
                 case 4 -> displayHeatUpPlans();
                 case 5 -> settings.tempChangeUnit();

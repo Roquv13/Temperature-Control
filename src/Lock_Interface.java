@@ -1,4 +1,4 @@
-public class Lock_Interaface {
+public class Lock_Interface {
     boolean isLocked = false;
 
     public void isLocked() {
