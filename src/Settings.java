@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Settings {
     Scanner scanner = new Scanner(System.in);
 
+    Temperature_Manual temperatureManual = new Temperature_Manual();
+
     public char tempUnit = '\u2103';
     public void tempChangeUnit() {
         System.out.println("Set up temperature unit:");
@@ -14,7 +16,10 @@ public class Settings {
 
         switch (select) {
             case 1 -> this.tempUnit = '\u2103';
-            case 2 -> this.tempUnit = '\u2109';
+            case 2 -> {
+                this.tempUnit = '\u2109';
+                temperatureManual.getTemperature();
+            }
         }
     }
 

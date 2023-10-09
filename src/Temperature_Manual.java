@@ -1,8 +1,9 @@
-public class TemperatureManual {
+public class Temperature_Manual {
     private double temperature;
-    public TemperatureManual(double initialTemperature) {
-        this.temperature = initialTemperature;
-    }
+
+//    public Temperature_Manual() {
+//        this.temperature = initialTemperature;
+//    }
 
     public double getTemperature() {
         return this.temperature;

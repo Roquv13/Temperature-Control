@@ -1,8 +1,6 @@
-import java.io.*;
-
 public class Main {
     public static void main(String[] args) {
-        UserInterface userInterface = new UserInterface();
+        User_Interface userInterface = new User_Interface();
 
         userInterface.displayUserSelection();
 
