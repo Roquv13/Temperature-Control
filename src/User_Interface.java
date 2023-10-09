@@ -23,13 +23,22 @@ public class User_Interface {
             int userSelection = scanner.nextInt();
 
             switch (userSelection) {
-                case 1 -> System.out.println("Actual temperature: " + temperatureManual.getTemperature() + settings.getTempUnit());
-                case 2 -> displayTempControlSelection();
-                case 3 -> {
-                    lockInterface.isLocked();
+                case 1 -> {
+                    System.out.println("Actual temperature: " + temperatureManual.getTemperature() + settings.getTempUnit());
                 }
+                case 2 -> displayTempControlSelection();
+                case 3 -> lockInterface.isLocked();
                 case 4 -> displayHeatUpPlans();
-                case 5 -> settings.tempChangeUnit();
+                case 5 -> {
+                    settings.tempChangeUnit();
+                    if (settings.getTempUnit() == '\u2109') {
+                        double tempConvert = (temperatureManual.getTemperature() * 1.8) + 32;
+                        temperatureManual.setTemperature(tempConvert);
+                    } else if (settings.getTempUnit() == '\u2103') {
+                        double tempConvert = (temperatureManual.getTemperature() - 32) / 1.8;
+                        temperatureManual.setTemperature(tempConvert);
+                    }
+                }
                 case 6 -> select = false;
             }
         } while (select);
