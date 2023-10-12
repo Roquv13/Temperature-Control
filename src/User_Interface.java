@@ -85,41 +85,69 @@ public class User_Interface {
             int userSelection = scanner.nextInt();
 
             switch (userSelection) {
-                case 1 -> System.out.println("Display");
+                case 1 -> displayHeatUp();
                 case 2 -> setHeatUp();
                 case 3 -> select = false;
             }
         } while (select);
     }
+    public void displayHeatUp() {
+        boolean select = true;
+
+        do {
+            System.out.println("Heat up plans:");
+            System.out.println("1. Week by days:");
+            System.out.println("2. Whole week:");
+            System.out.println("3. Working days and weekend:");
+            System.out.println("4. Back");
+            System.out.println();
+
+            System.out.println("Select:");
+            int userSelection = scanner.nextInt();
+
+            switch (userSelection) {
+                case 1 -> {
+                    displayWeekByDays();
+                }
+                case 2 -> {
+                    displayWeekAllDays();
+                }
+                case 3 -> {
+                    displayWorkingDaysWeekend();
+                }
+                case 4 -> select = false;
+            }
+        } while(select);
+    }
     public void displayWeekByDays() {
         switch (dateTime.getDay()) {
             case 1 -> {
                 System.out.println("Sunday");
-                temperatureManual.setTemperature(24.0);
+                temperatureManual.getTemperature();
             }
             case 2 -> {
                 System.out.println("Monday");
-                temperatureManual.setTemperature(26.5);
+                temperatureManual.getTemperature();
             }
             case 3 -> {
                 System.out.println("Tuesday");
-                temperatureManual.setTemperature(25.3);
+                temperatureManual.getTemperature();
             }
             case 4 -> {
                 System.out.println("Wednesday");
-                temperatureManual.setTemperature(22.5);
+                temperatureManual.getTemperature();
             }
             case 5 -> {
                 System.out.println("Thursday");
-                temperatureManual.setTemperature(21.5);
+                temperatureManual.getTemperature();
             }
             case 6 -> {
                 System.out.println("Friday");
-                temperatureManual.setTemperature(25.0);
+                temperatureManual.getTemperature();
             }
             case 7 -> {
                 System.out.println("Saturday");
-                temperatureManual.setTemperature(24.7);
+                temperatureManual.getTemperature();
             }
         }
     }
@@ -169,31 +197,45 @@ public class User_Interface {
         switch (dateTime.getDay()) {
             case 1 -> {
                 System.out.println("Sunday");
-                temperatureManual.setTemperature(24.0);
+                System.out.println("Set up temperature: ");
+                double temp = scanner.nextDouble();
+                temperatureManual.setTemperature(temp);
             }
             case 2 -> {
                 System.out.println("Monday");
-                temperatureManual.setTemperature(26.5);
+                System.out.println("Set up temperature: ");
+                double temp = scanner.nextDouble();
+                temperatureManual.setTemperature(temp);
             }
             case 3 -> {
                 System.out.println("Tuesday");
-                temperatureManual.setTemperature(25.3);
+                System.out.println("Set up temperature: ");
+                double temp = scanner.nextDouble();
+                temperatureManual.setTemperature(temp);
             }
             case 4 -> {
                 System.out.println("Wednesday");
-                temperatureManual.setTemperature(22.5);
+                System.out.println("Set up temperature: ");
+                double temp = scanner.nextDouble();
+                temperatureManual.setTemperature(temp);
             }
             case 5 -> {
                 System.out.println("Thursday");
-                temperatureManual.setTemperature(21.5);
+                System.out.println("Set up temperature: ");
+                double temp = scanner.nextDouble();
+                temperatureManual.setTemperature(temp);
             }
             case 6 -> {
                 System.out.println("Friday");
-                temperatureManual.setTemperature(25.0);
+                System.out.println("Set up temperature: ");
+                double temp = scanner.nextDouble();
+                temperatureManual.setTemperature(temp);
             }
             case 7 -> {
                 System.out.println("Saturday");
-                temperatureManual.setTemperature(24.7);
+                System.out.println("Set up temperature: ");
+                double temp = scanner.nextDouble();
+                temperatureManual.setTemperature(temp);
             }
         }
     }
