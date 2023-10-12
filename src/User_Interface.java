@@ -4,6 +4,7 @@ public class User_Interface {
     Scanner scanner = new Scanner(System.in);
     Temperature_Manual temperatureManual = new Temperature_Manual();
     HeatUp_Plans heatUpPlans = new HeatUp_Plans();
+    Date_Time dateTime = new Date_Time();
 
     public void displayUserSelection() {
         Settings settings = new Settings();
@@ -90,40 +91,6 @@ public class User_Interface {
             }
         } while (select);
     }
-
-    public void setHeatUp() {
-        boolean select = true;
-
-        do {
-            System.out.println("Heat up plans:");
-            System.out.println("1. Set up week by days:");
-            System.out.println("2. Set up whole week:");
-            System.out.println("3. Set up working days and weekend:");
-            System.out.println("4. Back");
-            System.out.println();
-
-            System.out.println("Select:");
-            int userSelection = scanner.nextInt();
-
-            switch (userSelection) {
-                case 1 -> {
-                    System.out.println("Set up week by days:");
-                    setUpWeekByDays();
-                }
-                case 2 -> {
-                    System.out.println("Set up whole week:");
-                    setUpWeekAllDays();
-                }
-                case 3 -> {
-                    System.out.println("Set up working days and weekend:");
-                    setUpWorkingDaysWeekend();
-                }
-                case 4 -> select = false;
-            }
-        } while(select);
-    }
-
-    Date_Time dateTime = new Date_Time();
     public void displayWeekByDays() {
         switch (dateTime.getDay()) {
             case 1 -> {
@@ -166,6 +133,37 @@ public class User_Interface {
             case 1, 2, 3, 4, 5 -> System.out.println("Working day");
             case 6, 7 -> System.out.println("Weekend");
         }
+    }
+    public void setHeatUp() {
+        boolean select = true;
+
+        do {
+            System.out.println("Heat up plans:");
+            System.out.println("1. Set up week by days:");
+            System.out.println("2. Set up whole week:");
+            System.out.println("3. Set up working days and weekend:");
+            System.out.println("4. Back");
+            System.out.println();
+
+            System.out.println("Select:");
+            int userSelection = scanner.nextInt();
+
+            switch (userSelection) {
+                case 1 -> {
+                    System.out.println("Set up week by days:");
+                    setUpWeekByDays();
+                }
+                case 2 -> {
+                    System.out.println("Set up whole week:");
+                    setUpWeekAllDays();
+                }
+                case 3 -> {
+                    System.out.println("Set up working days and weekend:");
+                    setUpWorkingDaysWeekend();
+                }
+                case 4 -> select = false;
+            }
+        } while(select);
     }
     public void setUpWeekByDays() {
         switch (dateTime.getDay()) {
