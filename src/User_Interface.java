@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.text.DateFormatSymbols;
+import java.util.*;
 
 public class User_Interface {
     Scanner scanner = new Scanner(System.in);
@@ -59,7 +60,10 @@ public class User_Interface {
             int userSelection = scanner.nextInt();
 
             switch (userSelection) {
-                case 1 -> System.out.println("Automatic");
+                case 1 -> {
+                    System.out.println("Automatic");
+                    automaticControl();
+                }
                 case 2 -> {
                     System.out.println("Set up temperature:");
                     double value = scanner.nextDouble();
@@ -69,6 +73,10 @@ public class User_Interface {
                 case 3 -> select = false;
             }
         } while (select);
+    }
+
+    public void automaticControl() {
+        
     }
 
     public void heatUpPlans() {
@@ -193,50 +201,15 @@ public class User_Interface {
             }
         } while(select);
     }
+
+    HashMap<String, Double> weekDaysTemp = new HashMap<>();
     public void setUpWeekByDays() {
-        switch (dateTime.getDay()) {
-            case 1 -> {
-                System.out.println("Sunday");
-                System.out.println("Set up temperature: ");
-                double temp = scanner.nextDouble();
-                temperatureManual.setTemperature(temp);
-            }
-            case 2 -> {
-                System.out.println("Monday");
-                System.out.println("Set up temperature: ");
-                double temp = scanner.nextDouble();
-                temperatureManual.setTemperature(temp);
-            }
-            case 3 -> {
-                System.out.println("Tuesday");
-                System.out.println("Set up temperature: ");
-                double temp = scanner.nextDouble();
-                temperatureManual.setTemperature(temp);
-            }
-            case 4 -> {
-                System.out.println("Wednesday");
-                System.out.println("Set up temperature: ");
-                double temp = scanner.nextDouble();
-                temperatureManual.setTemperature(temp);
-            }
-            case 5 -> {
-                System.out.println("Thursday");
-                System.out.println("Set up temperature: ");
-                double temp = scanner.nextDouble();
-                temperatureManual.setTemperature(temp);
-            }
-            case 6 -> {
-                System.out.println("Friday");
-                System.out.println("Set up temperature: ");
-                double temp = scanner.nextDouble();
-                temperatureManual.setTemperature(temp);
-            }
-            case 7 -> {
-                System.out.println("Saturday");
-                System.out.println("Set up temperature: ");
-                double temp = scanner.nextDouble();
-                temperatureManual.setTemperature(temp);
-            }
+        String[] days = new DateFormatSymbols(Locale.of("en")).getWeekdays();
+
+        for (int i = 0; i < days.length - 1; i++){
+            System.out.println("Set up temperature for " + days[i + 1] + ":");
+            double temp = scanner.nextDouble();
+            weekDaysTemp.put(days[i], temp);
         }
     }
 
