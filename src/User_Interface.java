@@ -65,9 +65,7 @@ public class User_Interface {
                     automaticControl();
                 }
                 case 2 -> {
-                    System.out.println("Set up temperature:");
-                    double value = scanner.nextDouble();
-                    temperatureManual.setTemperature(value);
+                    manualControl();
                     select = false;
                 }
                 case 3 -> select = false;
@@ -109,7 +107,9 @@ public class User_Interface {
     }
 
     public void manualControl() {
-
+        System.out.println("Set up temperature:");
+        double value = scanner.nextDouble();
+        temperatureManual.setTemperature(value);
     }
 
     public void heatUpPlans() {
