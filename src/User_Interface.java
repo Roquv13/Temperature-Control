@@ -76,7 +76,40 @@ public class User_Interface {
     }
 
     public void automaticControl() {
-        
+        switch (dateTime.getDay()) {
+            case 1 -> {
+                System.out.println("Sunday");
+                temperatureManual.setTemperature(weekDaysTemp.get(days[0]));
+            }
+            case 2 -> {
+                System.out.println("Monday");
+                temperatureManual.setTemperature(weekDaysTemp.get(days[1]));
+            }
+            case 3 -> {
+                System.out.println("Tuesday");
+                temperatureManual.setTemperature(weekDaysTemp.get(days[2]));
+            }
+            case 4 -> {
+                System.out.println("Wednesday");
+                temperatureManual.setTemperature(weekDaysTemp.get(days[3]));
+            }
+            case 5 -> {
+                System.out.println("Thursday");
+                temperatureManual.setTemperature(weekDaysTemp.get(days[4]));
+            }
+            case 6 -> {
+                System.out.println("Friday");
+                temperatureManual.setTemperature(weekDaysTemp.get(days[5]));
+            }
+            case 7 -> {
+                System.out.println("Saturday");
+                temperatureManual.setTemperature(weekDaysTemp.get(days[6]));
+            }
+        }
+    }
+
+    public void manualControl() {
+
     }
 
     public void heatUpPlans() {
@@ -203,9 +236,8 @@ public class User_Interface {
     }
 
     HashMap<String, Double> weekDaysTemp = new HashMap<>();
+    String[] days = new DateFormatSymbols(Locale.of("en")).getWeekdays();
     public void setUpWeekByDays() {
-        String[] days = new DateFormatSymbols(Locale.of("en")).getWeekdays();
-
         for (int i = 0; i < days.length - 1; i++){
             System.out.println("Set up temperature for " + days[i + 1] + ":");
             double temp = scanner.nextDouble();
