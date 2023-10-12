@@ -108,15 +108,15 @@ public class User_Interface {
             switch (userSelection) {
                 case 1 -> {
                     System.out.println("Set up week by days:");
-                    weekByDays();
+                    setUpWeekByDays();
                 }
                 case 2 -> {
                     System.out.println("Set up whole week:");
-                    weekAllDays();
+                    setUpWeekAllDays();
                 }
                 case 3 -> {
                     System.out.println("Set up working days and weekend:");
-                    workingDaysWeekend();
+                    setUpWorkingDaysWeekend();
                 }
                 case 4 -> select = false;
             }
@@ -124,11 +124,10 @@ public class User_Interface {
     }
 
     Date_Time dateTime = new Date_Time();
-    public void weekByDays() {
+    public void displayWeekByDays() {
         switch (dateTime.getDay()) {
             case 1 -> {
                 System.out.println("Sunday");
-
                 temperatureManual.setTemperature(24.0);
             }
             case 2 -> {
@@ -158,11 +157,54 @@ public class User_Interface {
         }
     }
 
-    public void weekAllDays() {
+    public void displayWeekAllDays() {
         System.out.println("All days of week, only hours");
     }
 
-    public void workingDaysWeekend() {
+    public void displayWorkingDaysWeekend() {
+        switch (dateTime.getDay()) {
+            case 1, 2, 3, 4, 5 -> System.out.println("Working day");
+            case 6, 7 -> System.out.println("Weekend");
+        }
+    }
+    public void setUpWeekByDays() {
+        switch (dateTime.getDay()) {
+            case 1 -> {
+                System.out.println("Sunday");
+                temperatureManual.setTemperature(24.0);
+            }
+            case 2 -> {
+                System.out.println("Monday");
+                temperatureManual.setTemperature(26.5);
+            }
+            case 3 -> {
+                System.out.println("Tuesday");
+                temperatureManual.setTemperature(25.3);
+            }
+            case 4 -> {
+                System.out.println("Wednesday");
+                temperatureManual.setTemperature(22.5);
+            }
+            case 5 -> {
+                System.out.println("Thursday");
+                temperatureManual.setTemperature(21.5);
+            }
+            case 6 -> {
+                System.out.println("Friday");
+                temperatureManual.setTemperature(25.0);
+            }
+            case 7 -> {
+                System.out.println("Saturday");
+                temperatureManual.setTemperature(24.7);
+            }
+        }
+    }
+
+    public void setUpWeekAllDays() {
+        System.out.println("All days of week, only hours");
+    }
+
+    public void setUpWorkingDaysWeekend() {
         switch (dateTime.getDay()) {
             case 1, 2, 3, 4, 5 -> System.out.println("Working day");
             case 6, 7 -> System.out.println("Weekend");
