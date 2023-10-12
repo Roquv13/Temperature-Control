@@ -4,6 +4,7 @@ import java.util.*;
 public class User_Interface {
     Scanner scanner = new Scanner(System.in);
     Temperature_Manual temperatureManual = new Temperature_Manual();
+    Settings settings = new Settings();
     HeatUp_Plans heatUpPlans = new HeatUp_Plans();
     Date_Time dateTime = new Date_Time();
 
@@ -161,35 +162,9 @@ public class User_Interface {
         } while(select);
     }
     public void displayWeekByDays() {
-        switch (dateTime.getDay()) {
-            case 1 -> {
-                System.out.println("Sunday");
-                temperatureManual.getTemperature();
-            }
-            case 2 -> {
-                System.out.println("Monday");
-                temperatureManual.getTemperature();
-            }
-            case 3 -> {
-                System.out.println("Tuesday");
-                temperatureManual.getTemperature();
-            }
-            case 4 -> {
-                System.out.println("Wednesday");
-                temperatureManual.getTemperature();
-            }
-            case 5 -> {
-                System.out.println("Thursday");
-                temperatureManual.getTemperature();
-            }
-            case 6 -> {
-                System.out.println("Friday");
-                temperatureManual.getTemperature();
-            }
-            case 7 -> {
-                System.out.println("Saturday");
-                temperatureManual.getTemperature();
-            }
+        for (int i = 0; i < days.length - 1; i++) {
+            System.out.println(days[i + 1] + "\nTemperature: " + weekDaysTemp.get(days[i]) + settings.getTempUnit());
+            System.out.println();
         }
     }
 
