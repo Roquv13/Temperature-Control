@@ -28,7 +28,7 @@ public class User_Interface {
                 }
                 case 2 -> displayTempControlSelection();
                 case 3 -> lockInterface.isLocked();
-                case 4 -> displayHeatUpPlans();
+                case 4 -> heatUpPlans();
                 case 5 -> {
                     settings.tempChangeUnit();
                     if (settings.getTempUnit() == '\u2109') {
@@ -43,6 +43,7 @@ public class User_Interface {
             }
         } while (select);
     }
+
     public void displayTempControlSelection() {
         boolean select = true;
 
@@ -69,7 +70,28 @@ public class User_Interface {
         } while (select);
     }
 
-    public void displayHeatUpPlans() {
+    public void heatUpPlans() {
+        boolean select = true;
+
+        do {
+            System.out.println("Heat up plans:");
+            System.out.println("1. Display heat up plans");
+            System.out.println("2. Set up heat up plans");
+            System.out.println("3. Back");
+            System.out.println();
+
+            System.out.println("Select:");
+            int userSelection = scanner.nextInt();
+
+            switch (userSelection) {
+                case 1 -> System.out.println("Display");
+                case 2 -> setHeatUp();
+                case 3 -> select = false;
+            }
+        } while (select);
+    }
+
+    public void setHeatUp() {
         boolean select = true;
 
         do {
@@ -98,15 +120,15 @@ public class User_Interface {
                 }
                 case 4 -> select = false;
             }
-        } while (select);
+        } while(select);
     }
 
     Date_Time dateTime = new Date_Time();
     public void weekByDays() {
-
         switch (dateTime.getDay()) {
             case 1 -> {
                 System.out.println("Sunday");
+
                 temperatureManual.setTemperature(24.0);
             }
             case 2 -> {
